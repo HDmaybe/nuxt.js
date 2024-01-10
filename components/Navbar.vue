@@ -41,10 +41,11 @@
 
 
   .menu-bar {
-    background-color: #333;
+    background-color: white;
     color: #fff;
     padding: 10px;
     display: flex;
+    
   }
   
   .menu-items {
