@@ -1,15 +1,27 @@
 <template>
-    <nav class="menu-bar">
-        <div class="logo">
+    <nav class="menu-bar" style="position: sticky; top: 0px; z-index: 1;">
+        <div class="logo" style="flex :1;">
             <a href="http://localhost:3000/">
-                <img src="http://intellisys.co.kr/images/common/logo-black.png" alt="logo">
+                <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 30px; margin-top: 10px;" alt="logo">
             </a>
         </div>
-      <ul class="menu-items">
-        <li v-for="(item, index) in menuItems" :key="index" class="menu-item">
-          <a :href="item.link">{{ item.name }}</a>
-        </li>
-      </ul>
+        <ul class="menu-items" style="flex :3;">
+          <li v-for="(item, index) in menuItems" :key="index" class="menu-item">
+            <a :href="item.link" style="font-weight: 700; font-size: 22px;">{{ item.name }}</a>
+          </li>
+        </ul>
+        <div class="msbar" style="flex :1; margin: auto;">
+          <a href="mailto:contact@intellisys.co.kr" style="margin-left: auto;">
+            <i style="width 35px; height:40px; w"></i>
+          </a>
+          <button class="sidebar-btn" style="height: 40px;">
+            <div class="sidebar-group">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
     </nav>
   </template>
   
@@ -38,6 +50,7 @@
         max-height: 50px; 
         max-width: 100%;
     }
+
 
 
   .menu-bar {
@@ -76,5 +89,70 @@ li a:active {
   color : green;
 }
 
+@media (max-width: 1920px){
+.msbar {
+    height: 100%;
+}}
+.msbar{
+    display: flex;
+    float: right;
+}
+
+@media (max-width: 1920px){
+.msbar a, .msbar button {
+    width: 80px;
+    height: 100%;
+}}
+.masbar a {
+    background-color: #fff;
+}
+.msbar a, .msbar button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-1px);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.msbar a i {
+    width: 40px;
+    height: 20px;
+    background: url(https://cdn.iconscout.com/icon/free/png-256/free-mail-1437261-1216865.png) no-repeat center / cover;
+}
+
+@media (max-width: 1920px){
+.msbar a, .msbar button {
+    width: 80px;
+    height: 100%;
+}}
+.msbar button {
+    background-color: #1f1247;
+}
+button{
+  cursor:pointer;
+}
+
+.msbar .sidebar-group{
+    width: 20px;
+    height: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+navbar .sidebar-group span {
+    transition: 0.3s ease;
+    transform-origin: left center;
+}
+.msbar button span {
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+}
 
   </style>
