@@ -13,7 +13,7 @@
                   <li> 사업자등록번호 329-81-00803 </li>
                   <li> 문의 contact@intellisys.co.kr  </li>
             </ul>
-            <p class="copy">Copyright©2024 IntelliSys</p>   
+            <p class="copy" style="margin:auto;padding-left: 40px;font-weight: 500;">Copyright©2024 IntelliSys</p>   
 
           </div>
         </div>
@@ -60,7 +60,7 @@ div{
 .fot-bottom .fot-content li {
     font-size: 15px;
     font-family: "Noto Sans Kr";
-    font-weight: 300;
+    font-weight: 500;
     color: #525252;
     line-height: 22px;
     display: inline-flex;

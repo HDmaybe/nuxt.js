@@ -4,8 +4,8 @@
     </Navbar>
     <main>
         <div class="content">
-            <div class="content1" style="height:612px; ">
-                <img src="http://intellisys.co.kr/images/sub/visual/visual01.jpg" style="height:100%;">
+            <div class="content1" style="width: 100%">
+                <img src="http://intellisys.co.kr/images/sub/visual/visual01.jpg" style="width: 100%;">
                 <div class="innerletter">
                     <h3>
                     <span style="font-size: 34px; margin-bottom: 12px; display: block; line-height: 34px">
@@ -135,7 +135,7 @@ export default {
 
             if(element){
                 const location = element.offsetTop;
-                window.scrollTo({top:location, behavior:'smooth'});
+                window.scrollTo({top:location-100, behavior:'smooth'});
             }
         }
     }
@@ -148,14 +148,14 @@ section{
 }
 
 .innerletter{
-    max-width: 1440px;
+    
     width: 100%;
     height: calc(100% + 80px);
     margin: 0 auto ;
 }
 
 .title{
-    max-width: 1440px;
+    
     width: 100%;
     height: calc(100% + 80px);
     margin: 0 auto;

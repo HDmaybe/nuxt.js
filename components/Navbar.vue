@@ -2,12 +2,13 @@
     <nav class="menu-bar" style="position: sticky; top: 0px; z-index: 1;">
         <div class="logo" style="flex :1;">
             <a href="http://localhost:3000/">
-                <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 30px; margin-top: 10px;" alt="logo">
+                <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 40px; margin-top: 10px;" alt="logo">
             </a>
         </div>
         <ul class="menu-items" style="flex :3;">
-          <li v-for="(item, index) in menuItems" :key="index" class="menu-item">
+          <li v-for="(item, index) in menuItems" :key="index" class="menu-item" style="margin:auto">
             <a :href="item.link" style="font-weight: 700; font-size: 22px;">{{ item.name }}</a>
+     
           </li>
         </ul>
         <div class="msbar" style="flex :1; margin: auto;">
@@ -31,13 +32,15 @@
       return {
         menuItems: [
           { name: 'Company', link: '/Company' },
-          { name: 'Product', link: '/Product' },
-          { name: 'AI 바우처', link: '/AIb' },
-          { name: 'Blog', link: '/Blog' },
-          {name: 'Contact', link: '/contact'  }
+          { name: 'restory.i', link: '/Product2' },
+          { name: 'I.P.S.', link: '/Product'},
+          { name: 'AI FSS', link: '/Product3'},
+          {name: 'AI voucher', link: '/AIb' },
         ],
+
       };
     },
+
   };
   </script>
   
@@ -154,5 +157,6 @@ navbar .sidebar-group span {
     height: 3px;
     background-color: #fff;
 }
+
 
   </style>
