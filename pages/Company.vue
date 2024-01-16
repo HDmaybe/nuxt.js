@@ -3,22 +3,27 @@
 
   <Navbar/>
   <div class="image-container">
-    <div class="image1">
-    <img src="https://i.ytimg.com/vi/c_zE6-kX8AA/maxresdefault.jpg" alt="background-image" />
+    <img src="http://intellisys.co.kr/images/sub/visual/visual04.jpg" alt="background-image" />
+    <div class="text1" style="position: absolute; top:50%; left:3%">
+      <P style="color:white;">인텔리시스는 서울대학교 컴퓨터공학부 지능형 데이터 시스템
+        <br>
+        연구실의 핵심 멤버들이 축적된 연구 역량을 기반으로 설립한
+        <br>
+        AI 벤처기업으로 AI, BIG DATA, 차세대 e-커머스에 특화된
+        <br>
+        첨단 기술로 리테일 패러다임의 혁신을 추구합니다.
+      </P>
     </div>
-    <div class="text1">
-
-    </div>
-  <div class = "text2">
-    <h3>
+  </div>
+  <div class = "text2" style="margin-bottom: 50px;">
+    <h3 style="margin-top: 40px;">
       AI Driven
       <br>
       Innovations
     </h3>
   </div>
-  </div>
-  <div class="chumdan">
-    <div class="smallBox">
+  <div class="chumdan" style="border-top: solid 1px rgb(157, 156, 156); width: 100%;">
+    <div class="smallBox" >
       <div><img src="http://intellisys.co.kr/images/icon/ico-company01.png"></div>
       <h4>차별화된 첨단 기술력과 <br> 최우수 인재팀</h4>
       <h5>서울대 석박사 출신 <br> AI 엔지니어 팀</h5>
@@ -41,7 +46,7 @@
 원천기술을 확보하고 있습니다.</p>
 
   </div>
-  <div id = "mem" class="memberCircle">
+  <div class="memberCircle">
     <ul> 
       <li v-for="member in members1" :key="member.index">
       <h4>{{ member.name }}</h4>
@@ -76,20 +81,20 @@
   export default {
     
     name: 'CompanyPage',
-    el:"mem",
+    
     data() {
         return{
             members1: [
               {index: 1, role : 'CEO', name: 'EY Park'},
-              {index: 2,role : 'CEO', name: 'SC Park'},
-              {index: 3,role : 'CEO', name: 'SG Lee'},
-              {index: 4, role : 'CEO', name: 'JW Baek'}
+              {index: 2,role : 'CTO', name: 'SC Park'},
+              {index: 3,role : 'Adviser', name: 'SG Lee'},
+              {index: 4, role : 'Engineer', name: 'JW Baek'}
             ],
             members2: [
-            {index: 1,role : 'CEO', name: 'JH Kim'},
-            {index: 2,role : 'CEO', name: 'SH Lee'},
-            {index: 3,role : 'CEO', name: 'HM Son'},
-            {index: 4, role : 'CEO', name: 'JS Park'}
+            {index: 1,role : 'Engineer', name: 'JH Kim'},
+            {index: 2,role : 'Engineer', name: 'SH Lee'},
+            {index: 3,role : 'Engineer', name: 'TS Jeong'},
+            {index: 4, role : 'Intern', name: 'HG Yoon'}
             ]
         };
 
@@ -105,11 +110,55 @@
 
 
 <style scoped>
+
+@media (max-width: 1920px){
+.text2 h3 {
+    min-width: 394px;
+    font-size: 38px;
+    font-weight: 700;
+}}
+.text2 h3 {
+    font-size: 50px;
+    /* font-family: "Circular Std Medium"; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    color: #000;
+    min-width: 515px;
+    margin-left: 50px;
+    margin-top: 20px;
+
+}
+
 .container{
   display: flex;
   flex-direction: column;
   
 }
+
+.smallBox h4{
+  font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    color: #000;
+    line-height: 29px;
+    margin-bottom: 22px;
+    text-align: center;
+    transform: translateY(40px);
+}
+
+
+.smallBox h5{
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+
 
 .n1{
   width:30%;
@@ -129,17 +178,36 @@
   display: block;
 }
 .members{
-
+  width: 100%;
   display:flex;
-  background-color:beige;
+  background-color:#fafafa;
   text-align: left;
-  
+  height: 200px;
+  padding-top: 60px;
+
 
   
 }
 
+
 .members p{
   color:gray;
+  font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 16px;
+    width: 110%;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+}
+
+.members h3{
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 26px;
+    min-width: 394px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: 70px;
 }
 
 .company-people ul li span {
@@ -152,16 +220,21 @@
     transform: translateX(-50%);
 }
 
+@media(max-width: 1920px){
 
-.text1{
-    position: absolute;
-    top : 40%;
-    left : 50%;
-    white-space:normal;
-    width: 200px;
-    height: 50px;
-    color : white;
-
+.page-visual h3 {
+    font-size: 18px;
+    line-height: 34px;
+}}
+.text1 p {
+    font-size: 24px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    line-height: 45px;
+    transform: translateY(25px);
+    opacity: 0;
+    animation: fadeIn-up 0.75s 0.25s ease forwards;
 }
 
 
@@ -185,7 +258,6 @@ h3{
 .chumdan{
   display: flex;
   justify-content: space-between;
-  padding: 92px 50px;
   margin: auto;
 }
 
@@ -206,8 +278,6 @@ h3{
     height: 130px;
     border-radius: 50%;
     background-color: #fff;
-    opacity: 0;
-    transform: translateY(40px);
 
 }
 
@@ -244,9 +314,6 @@ h3{
     opacity: 1;
     transform: translateY(0);
   }
-}
-.memberCircle ul:nth-child(1) li:nth-child(2) {
-    animation: fadeIn-up 1s 1.3s ease-in-out forwards;
 }
 
 

@@ -36,6 +36,7 @@
           { name: 'I.P.S.', link: '/Product'},
           { name: 'AI FSS', link: '/Product3'},
           {name: 'AI voucher', link: '/AIb' },
+          {name: 'Contact', link: '/Contact'}
         ],
 
       };
@@ -85,7 +86,7 @@ li a:visited {
 }
 
 li a:hover {
-  color : red;
+  color : gold;
 }
 
 li a:active {
