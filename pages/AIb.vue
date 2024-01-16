@@ -1,14 +1,14 @@
 <template>
     <div>
         <Navbar/>
-        <div class="content">
+        <div class="content" style="width: 100%;">
             <section id="ai-voucher-top-img" class="page-visual ai-voucher">            
             <div class="ButtonM">
                 <button @click="click()" class="voucher-btn">문의하기</button>
             </div>
-        </section>
-        <div id="container" justify="center" class="sec-inner show">
-            <div id="#inner-container">
+            </section>
+            <div id="container" justify="center" class="sec-inner show" style="width: 100%;">
+                <div id="#inner-container">
       
                 <div class="sec-title show" style="padding: 35px 0px; border-bottom: none; opacity: 1; animation: none; transform: none;">
                     <h3 style="font-size: 30px; font-family: 'GmarketSansBold', 'Noto Sans KR'">
@@ -23,8 +23,8 @@
                         인텔리시스 AI 솔루션
                     </h3>   
                 </div>
-                <div class="company-diagram-text">
-                    <div class="slidebox">
+                <div class="company-diagram-text" style="width: 100%;">
+                    <div class="slidebox" style="width: 100%;">
         
           
                         <input type="radio" name="slide" checked="" id="slide01">
@@ -35,23 +35,23 @@
                         <ul class="slidelist" style="list-style: none;">
           
                             <li class="slideitem" style="list-style: none; text-align: center">
-                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_1.png">
+                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_1.png" style="width: 100%;">
                             </li>
                         
                             <li class="slideitem" style="list-style: none; text-align: center">
-                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_2.png">
+                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_2.png" style="width: 100%;">
                             </li>
                         
                             <li class="slideitem" style="list-style: none; text-align: center">
-                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_3.png">
+                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_3.png" style="width: 100%;">
                             </li>
                         
                             <li class="slideitem" style="list-style: none; text-align: center">
-                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_4.png">
+                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_4.png" style="width: 100%;">
                             </li>
                         
                             <li class="slideitem" style="list-style: none; text-align: center">
-                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_5.png">
+                                <img class="example" src="http://intellisys.co.kr/images/voucher/example_5.png" style="width: 100%;">
                             </li>
           
                         </ul>
