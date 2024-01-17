@@ -1,6 +1,6 @@
 <template>
     <nav class="menu-bar" style="position: sticky; top: 0px; z-index: 1;">
-        <div class="logo" style="flex :1;">
+        <div class="logo" style="flex :1; margin: auto;">
             <a href="/">
                 <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 40px; margin-top: 10px;" alt="logo">
             </a>
@@ -15,7 +15,7 @@
           <a href="mailto:contact@intellisys.co.kr" style="margin-left: auto;">
             <i style="width 35px; height:40px;"></i>
           </a>
-          <button class="sidebar-btn" style="height: 40px;">
+          <button class="sidebar-btn" style="">
             <div class="sidebar-group">
               <span></span>
               <span></span>
