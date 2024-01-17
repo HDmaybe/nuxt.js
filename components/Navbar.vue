@@ -1,7 +1,7 @@
 <template>
     <nav class="menu-bar" style="position: sticky; top: 0px; z-index: 1;">
         <div class="logo" style="flex :1;">
-            <a href="http://localhost:3000/">
+            <a href="/">
                 <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 40px; margin-top: 10px;" alt="logo">
             </a>
         </div>
@@ -13,7 +13,7 @@
         </ul>
         <div class="msbar" style="flex :1; margin: auto;">
           <a href="mailto:contact@intellisys.co.kr" style="margin-left: auto;">
-            <i style="width 35px; height:40px; w"></i>
+            <i style="width 35px; height:40px;"></i>
           </a>
           <button class="sidebar-btn" style="height: 40px;">
             <div class="sidebar-group">
@@ -32,10 +32,10 @@
       return {
         menuItems: [
           { name: 'Company', link: '/Company' },
-          { name: 'restory.i', link: '/Product2' },
-          { name: 'I.P.S.', link: '/Product'},
-          { name: 'AI FSS', link: '/Product3'},
-          {name: 'AI voucher', link: '/AIb' },
+          { name: 'restory.i', link: '/restoryi' },
+          { name: 'I.P.S.', link: '/ips'},
+          { name: 'AI FSS', link: '/fss'},
+          {name: 'AI voucher', link: '/aiv' },
           {name: 'Contact', link: '/Contact'}
         ],
 
@@ -54,9 +54,6 @@
         max-height: 50px; 
         max-width: 100%;
     }
-
-
-
   .menu-bar {
     background-color: white;
     color: #fff;
@@ -96,20 +93,18 @@ li a:active {
 @media (max-width: 1920px){
 .msbar {
     height: 100%;
-}}
+}
+
+.msbar a, .msbar button {
+    width: 80px;
+    height: 100%;
+}
+}
 .msbar{
     display: flex;
     float: right;
 }
 
-@media (max-width: 1920px){
-.msbar a, .msbar button {
-    width: 80px;
-    height: 100%;
-}}
-.masbar a {
-    background-color: #fff;
-}
 .msbar a, .msbar button {
     width: 80px;
     height: 80px;
@@ -129,16 +124,17 @@ a {
     background: url(https://cdn.iconscout.com/icon/free/png-256/free-mail-1437261-1216865.png) no-repeat center / cover;
 }
 
-@media (max-width: 1920px){
-.msbar a, .msbar button {
-    width: 80px;
-    height: 100%;
-}}
 .msbar button {
     background-color: #1f1247;
 }
 button{
   cursor:pointer;
+}
+
+.msbar button span {
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
 }
 
 .msbar .sidebar-group{
@@ -152,11 +148,6 @@ button{
 navbar .sidebar-group span {
     transition: 0.3s ease;
     transform-origin: left center;
-}
-.msbar button span {
-    width: 20px;
-    height: 3px;
-    background-color: #fff;
 }
 
 

@@ -56,26 +56,25 @@
                 </div>
                 </div>
                 <div class="content-step">
-                    <div style="display: flex; margin-top: 20px;">
+                  <div style="display: flex; margin-top: 20px;">
                                     
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">01</p>
-                                        <p id="step-text" class="content-step-pc-1-0">파일 업로드로 상품 정보 연동 후 상품을 선택합니다</p>
-                                    </div>
-                                
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">02</p>
-                                        <p id="step-text" class="content-step-pc-1-1">모델이 자동으로 상품에 맞는 설명문을 생성합니다.</p>
-                                    </div>
-                                
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">03</p>
-                                        <p id="step-text" class="content-step-pc-1-2">설명문에 대한 피드백을 통해 점점 더 고도화됩니다.</p>
-                                    </div>
-                                
-                            </div>
-                </div>
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">01</p>
+                        <p id="step-text" class="content-step-pc-1-0">파일 업로드로 상품 정보 연동 후 상품을 선택합니다</p>
+                    </div>
                 
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">02</p>
+                        <p id="step-text" class="content-step-pc-1-1">모델이 자동으로 상품에 맞는 설명문을 생성합니다.</p>
+                    </div>
+                
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">03</p>
+                        <p id="step-text" class="content-step-pc-1-2">설명문에 대한 피드백을 통해 점점 더 고도화됩니다.</p>
+                    </div>
+                                
+                  </div>
+                </div>               
               </div>
 
               <div class="cont3">
@@ -94,28 +93,26 @@
                 </div>
                 </div>
                 <div class="content-step">
-                    <div style="display: flex ;margin-top: 20px;">
-                                    
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">01</p>
-                                        <p id="step-text" class="content-step-pc-1-0">전시할 영역을 선택하고</p>
-                                    </div>
-                                
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">02</p>
-                                        <p id="step-text" class="content-step-pc-1-1">적용할 헤드라인과 설명문을 선택하면</p>
-                                    </div>
-                                
-                                    <div style="display: flex; width: 100%; margin: auto">
-                                        <p id="step" style="color: #6F43F5;">03</p>
-                                        <p id="step-text" class="content-step-pc-1-2">자동으로 쇼핑몰에 결과가 반영됩니다.</p>
-                                    </div>
-                                
-                            </div>
-                </div>
+                  <div style="display: flex ;margin-top: 20px;">
+                                  
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">01</p>
+                        <p id="step-text" class="content-step-pc-1-0">전시할 영역을 선택하고</p>
+                    </div>
                 
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">02</p>
+                        <p id="step-text" class="content-step-pc-1-1">적용할 헤드라인과 설명문을 선택하면</p>
+                    </div>
+                
+                    <div style="display: flex; width: 100%; margin: auto">
+                        <p id="step" style="color: #6F43F5;">03</p>
+                        <p id="step-text" class="content-step-pc-1-2">자동으로 쇼핑몰에 결과가 반영됩니다.</p>
+                    </div>
+                              
+                  </div>
+                </div>  
               </div>
-
 
               <div class="cont4" style="margin-bottom: 3vh; text-align: center;">
                 <img id="preview_img" src="http://intellisys.co.kr/images/restory_i/restory_i_preview.jpg">
@@ -127,7 +124,8 @@
           
         </div>
       </main>
-      <Footer/>
+      <Footer>
+      </Footer>
     </div>
   </template>
   
@@ -138,23 +136,6 @@
   </script>
   
   <style>
-  
-  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
-  }
-  
   #content-step{
     margin-top: 6vh;
     margin-bottom: 10vh;
@@ -194,7 +175,8 @@ font-size: 18px;
 line-height: 34px;
 font-weight: 500;
 color:white;
-}}
+}
+}
 
 *:not(a, span) {
     font-family: 'NanumSquareNeo-bold' !important;

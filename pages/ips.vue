@@ -161,25 +161,34 @@ section{
     margin: 0 auto;
 }
 
-
-
-
 @media (max-width: 1920px){
 .content2 .title h3{
     min-width: 350px;
-}}
+}
+
+.title h3 {
+    min-width: 394px;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.sec-move .move-button {
+    max-width: 1024px;
+}
+
+.sec-move .move-button button {
+    font-size: 16px;
+    height: 42px;
+    padding: 0 24px;
+}
+
+}
 
 .content2 .title h3 {
     min-width: 450px;
     margin-right: 20px;
 }
 
-@media (max-width: 1920px){
-.title h3 {
-    min-width: 394px;
-    font-size: 38px;
-    font-weight: 700;
-}}
 
 .title h3 {
     font-size: 38px;
@@ -203,30 +212,19 @@ p {
     margin-inline-end: 0px;
 }
 
-
-@media (max-width: 1920px){
-.sec-move .move-button {
-    max-width: 1024px;
-}}
-
 .sec-move .move-button {
     height: 100%;
     display: flex;
     align-items: center;
     width: 100%;
     margin: 0 auto;
+    max-width: 1024px;
 }
 
 .sec-move .move-button button.active {
     color: #ffffff!important;
     background-color: #684aec;
 }
-@media (max-width: 1920px){
-.sec-move .move-button button {
-    font-size: 16px;
-    height: 42px;
-    padding: 0 24px;
-}}
 
 .sec-move .move-button button {
     padding: 0 32px;
