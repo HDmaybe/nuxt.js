@@ -4,7 +4,6 @@
       <v-row justify="center" style="margin-top: 100px;">
         <v-col cols="12" sm="8" md="4">
           <v-card>
-
             <!-- 탭 추가 -->
             <v-tabs v-model="tab">
               <v-tab>로그인</v-tab>
