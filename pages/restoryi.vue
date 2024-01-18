@@ -124,8 +124,7 @@
           
         </div>
       </main>
-      <Footer>
-      </Footer>
+      <Footer/>
     </div>
   </template>
   
@@ -180,14 +179,6 @@ color:white;
 
 *:not(a, span) {
     font-family: 'NanumSquareNeo-bold' !important;
-}
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
 }
 
 #content-step {

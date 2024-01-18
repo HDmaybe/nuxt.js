@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar></Navbar>
+        <Navbar/>
         <main>
             <div class="title">
                 <h3> 찾아오시는 길 </h3>
@@ -22,7 +22,7 @@
                     contact@intellisys.co.kr
                 </h3>
             </div>
-            <Footer></Footer>
+            <Footer/>
         </main>
     </div>
 </template>
