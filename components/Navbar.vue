@@ -1,15 +1,28 @@
 <template>
-    <nav class="menu-bar">
-        <div class="logo">
-            <a href="http://localhost:3000/">
-                <img src="http://intellisys.co.kr/images/common/logo-black.png" alt="logo">
+    <nav class="menu-bar" style="position: sticky; top: 0px; z-index: 1;">
+        <div class="logo" style="flex :1; margin: auto;">
+            <a href="/">
+                <img src="http://intellisys.co.kr/images/common/logo-black.png" style="padding-left: 40px; margin-top: 10px;" alt="logo">
             </a>
         </div>
-      <ul class="menu-items">
-        <li v-for="(item, index) in menuItems" :key="index" class="menu-item">
-          <a :href="item.link">{{ item.name }}</a>
-        </li>
-      </ul>
+        <ul class="menu-items" style="flex :3;">
+          <li v-for="(item, index) in menuItems" :key="index" class="menu-item" style="margin:auto">
+            <a :href="item.link" style="font-weight: 700; font-size: 22px;">{{ item.name }}</a>
+     
+          </li>
+        </ul>
+        <div class="msbar" style="flex :1; margin: auto;">
+          <a href="mailto:contact@intellisys.co.kr" style="margin-left: auto;">
+            <i style="width 35px; height:40px;"></i>
+          </a>
+          <button class="sidebar-btn" style="">
+            <div class="sidebar-group">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
     </nav>
   </template>
   
@@ -19,13 +32,16 @@
       return {
         menuItems: [
           { name: 'Company', link: '/Company' },
-          { name: 'Product', link: '/Product' },
-          { name: 'AI 바우처', link: '/AIb' },
-          { name: 'Blog', link: '/Blog' },
-          {name: 'Contact', link: '/contact'  }
+          { name: 'restory.i', link: '/restoryi' },
+          { name: 'I.P.S.', link: '/ips'},
+          { name: 'AI FSS', link: '/fss'},
+          {name: 'AI voucher', link: '/aiv' },
+          {name: 'Contact', link: '/Contact'}
         ],
+
       };
     },
+
   };
   </script>
   
@@ -38,13 +54,12 @@
         max-height: 50px; 
         max-width: 100%;
     }
-
-
   .menu-bar {
-    background-color: #333;
+    background-color: white;
     color: #fff;
     padding: 10px;
     display: flex;
+    
   }
   
   .menu-items {
@@ -68,11 +83,71 @@ li a:visited {
 }
 
 li a:hover {
-  color : red;
+  color : gold;
 }
 
 li a:active {
   color : green;
+}
+
+@media (max-width: 1920px){
+.msbar {
+    height: 100%;
+}
+
+.msbar a, .msbar button {
+    width: 80px;
+    height: 100%;
+}
+}
+.msbar{
+    display: flex;
+    float: right;
+}
+
+.msbar a, .msbar button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-1px);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.msbar a i {
+    width: 40px;
+    height: 20px;
+    background: url(https://cdn.iconscout.com/icon/free/png-256/free-mail-1437261-1216865.png) no-repeat center / cover;
+}
+
+.msbar button {
+    background-color: #1f1247;
+}
+button{
+  cursor:pointer;
+}
+
+.msbar button span {
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.msbar .sidebar-group{
+    width: 20px;
+    height: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+navbar .sidebar-group span {
+    transition: 0.3s ease;
+    transform-origin: left center;
 }
 
 
