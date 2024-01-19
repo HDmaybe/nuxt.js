@@ -55,12 +55,32 @@ export default {
       registerPassword: ''
     };
   },
+  mounted() {
+    if (sessionStorage.getItem('status') != null) {
+      this.$router.push('/admin/admain')
+    }
+  },
   methods: {
-    login() {
-      // 로그인 함수
+    async login() {
+      const userData = { id: this.loginId, password: this.loginPassword };
+      await this.$store.dispatch('loginUser', userData);
+
+      if (this.$store.state.loginStatus === 'fail') {
+        alert('로그인 실패');
+      } else {
+        console.log('User:', this.$store.state.user);
+        this.$router.push('/admin/admain');
+      }
     },
-    register() {
-      // 회원가입 함수
+
+    async register() {
+      const userData = {
+        name: this.registerName,
+        id: this.registerId,
+        password: this.registerPassword
+      };
+      await this.$store.dispatch('signupUser', userData);
+      this.$router.push('/admin/');
     }
   }
 };
