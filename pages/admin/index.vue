@@ -4,13 +4,13 @@
       <v-row justify="center" style="margin-top: 100px;">
         <v-col cols="12" sm="8" md="4">
           <v-card>
-            <!-- 탭 추가 -->
+            <!-- 탭 -->
             <v-tabs v-model="tab">
               <v-tab>로그인</v-tab>
               <v-tab>회원가입</v-tab>
 
               <v-tab-item>
-                <!-- 로그인 페이지 내용 -->
+                <!-- 로그인 내용 -->
                 <v-card-text>
                   <v-form>
                     <v-text-field v-model="loginId" label="ID"></v-text-field>
@@ -57,15 +57,15 @@ export default {
   },
   methods: {
     login() {
-      // 로그인 처리 로직
+      // 로그인 함수
     },
     register() {
-      // 회원가입 처리 로직
+      // 회원가입 함수
     }
   }
 };
 </script>
 
 <style>
-/* 추가적인 스타일링이 필요한 경우 여기에 작성 */
+
 </style>
