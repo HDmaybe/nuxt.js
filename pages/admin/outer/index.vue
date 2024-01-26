@@ -2,9 +2,9 @@
 <div>
     <v-data-table
       :headers="headers"
-      :items="desserts"
-      sort-by="calories"
+      :items="items"
       class="elevation-1"
+      
     >
       <template v-slot:top>
         <v-toolbar
@@ -16,6 +16,12 @@
         </v-toolbar>
       </template>
       <template slot="item.actions" slot-scope={item}>
+        <tr v-for="product in displayedProducts" :key="product.pid">
+            <td>{{ product.pid }}</td>
+            <td>{{ product.product }}</td>
+            
+        </tr>
+
         <v-icon
           small
           class="mr-2"
@@ -31,11 +37,11 @@
         </v-icon>
       </template>
     </v-data-table>
-    <v-pagination
-      v-model="currentPage"
-      :length="totalPages"
-      @input="changePage"
-    ></v-pagination>
+    <div class="page">
+        <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+      </div>
 </div>
   </template>
   
@@ -43,37 +49,43 @@
     export default {
       data: () => ({
         headers: [
-          {
-            text: 'Name',
-            align: 'start',
-            sortable: false,
-            value: 'product',
-          },
-          { text: 'Item_ID', value: 'pid' },
+          { text: 'Name',align: 'start',value: '',},
+          { text: 'Item_ID', value: '' },
           { text: 'Actions', value: 'actions', sortable: false },
         ],
-        currentPage: 1, // 현재 페이지
-    totalPages: 1, // 전체 페이지 수
-      }),
-  
-      created () {
-        this.fetchProducts1();
-      },
-  
-      methods: {
-
-        async fetchProducts1() {
-            await this.$store.dispatch('fetchProducts', this.currentPage);
+        items: []
+        }),
+        computed: {
+        totalPages() {
+        return this.$store.getters['totalPages'];
         },
-
-        changePage(page) {
-      this.currentPage = page;
-      this.fetchProducts1();
-    },
-
-        deleteItem(productId){
-          this.$store.dispatch('deleteProduct',productId)
-        }
-      },
+        displayedProducts() {
+        return this.$store.state.productList
+        },
+        currentPage() {
+        return this.$store.state.currentPage;
+        },
+        },
+        async mounted() {
+        this.$store.dispatch('fetchProductList');
+        },
+        methods: {
+        nextPage() {
+            this.$store.dispatch('nextPage');
+        },
+        prevPage() {
+            this.$store.dispatch('prevPage');
+        },
+        },
+  
     }
   </script>
+
+<style scoped>
+.page {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
