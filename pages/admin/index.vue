@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     if (sessionStorage.getItem('status') != null) {
-      this.$router.push('/admin/admain')
+      this.$router.push('/admin/baon')
     }
   },
   methods: {
@@ -69,7 +69,7 @@ export default {
         alert('로그인 실패');
       } else {
         console.log('User:', this.$store.state.user);
-        this.$router.push('/admin/admain');
+        this.$router.push('/admin/baon');
       }
     },
 
@@ -80,7 +80,7 @@ export default {
         password: this.registerPassword
       };
       await this.$store.dispatch('signupUser', userData);
-      this.$router.push('/admin/');
+      this.$router.push('/admin');
     }
   }
 };

@@ -6,6 +6,7 @@ export const state = () => ({
   currentPage: 1,
   productsPerPage: 10,
   totalProducts: null,
+  duplicateProductIdMessage: null,
 });
 
 export const mutations = {
@@ -40,7 +41,24 @@ export const mutations = {
       state.productList.splice(index, 1);
     }
   },
+  
+  editProduct(state, productId) {
+    const index = state.productList.findIndex(product => product.pid === productId);
+    if (index !== -1) {
+      state.productList[index].product = editedItem.name;
+      state.productList[index].category1 = editedItem.category1;
+      state.productList[index].category2 = editedItem.category2;
+      state.productList[index].price = editedItem.price;
+      state.productList[index].sale = editedItem.sale_price;
+    }
+  },
 
+  appendProduct(state, product) {
+    state.productList.push(product);
+  },
+  setDuplicateProductIdMessage(state, message) {
+    state.duplicateProductIdMessage = message;
+  },
 };
 
 export const actions = {
@@ -69,6 +87,7 @@ export const actions = {
     });
 
     if (response.data.status === 'success') {
+      console.log('get')
       commit('setProductList', response.data.result.prd_list);
       commit('setTotalProducts', response.data.result.total_count);
     }
@@ -90,17 +109,30 @@ export const actions = {
   },
 
   async deleteProduct({ commit }, productId) {
-    try {
+    
       const response = await this.$axios.delete('http://restory.intellisys.co.kr:9998/prd/delete', {
         params: { type: 'baon', pid: productId },
       });
 
-      if (response.data.status === 'success') {
-        commit('deleteProduct', productId);
-      }
-    } catch (error) {
-      console.error('delete 에러', error);
-    }
+       if (response.data.status === 'success') {
+         commit('deleteProduct', productId);
+       }
+  },
+
+  async updateProduct({ commit,dispatch }, editedItem) {
+    // try {
+     await this.$axios.patch('http://restory.intellisys.co.kr:9998/prd/update',
+      editedItem,
+      );
+    // } catch (error) {
+    //   console.error('update 에러', error);
+    // }
+  },
+
+  async appendProduct({ commit }, editedItem) {
+      await this.$axios.post('http://restory.intellisys.co.kr:9998/prd/append',
+      editedItem,
+      );
   },
 
 };
