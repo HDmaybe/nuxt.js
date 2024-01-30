@@ -95,15 +95,20 @@ export const actions = {
 
   nextPage({ commit, dispatch, state }) {
     if (state.currentPage < Math.ceil(state.totalProducts / state.productsPerPage)) {
-      commit('setCurrentPage', state.currentPage + 1);
+      commit('setCurrentPage', state.currentPage );
       console.log(state.currentPage);
       dispatch('fetchProductList');
     }
   },
 
+  updatePage({commit,dispatch}, newPage) {
+    commit('setCurrentPage', newPage);
+    dispatch('fetchProductList');
+  },
+
   prevPage({ commit, dispatch, state }) {
     if (state.currentPage > 1) {
-      commit('setCurrentPage', state.currentPage - 1);
+      commit('setCurrentPage', state.currentPage);
       dispatch('fetchProductList');
     }
   },

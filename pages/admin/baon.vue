@@ -146,12 +146,21 @@
       {{ duplicateProductIdMessage }}
       </div>
     </v-data-table>
-    <div class="page">
+    <!-- <div class="page">
         <button @click="prevPage" :disabled="currentPage === 1" style="margin-left: 30px; font-weight: 500;">Previous</button>
         <span style ="font-weight: 500">Page {{ currentPage }} of {{ totalPages }}</span>
         <button @click="nextPage" :disabled="currentPage === totalPages" style="margin-right: 30px; font-weight: 500">Next</button>
-    </div>
-
+    </div> -->
+    <v-pagination
+    v-model="currentPage"
+    :length="totalPages"
+    @next="nextPage"
+    @input="handlePageChange"
+    @previous="prevPage"
+    total-visible="10"
+    style="margin-top: 25px;"
+    > 
+    </v-pagination>
     <v-dialog
             v-model="dialog"
             max-width="500px"
@@ -259,6 +268,7 @@
 export default {
   layout: 'lay1',
   data: () => ({
+    page : 1,
     dialog: false,
     dialogDelete: false,
     headers: [
@@ -336,10 +346,15 @@ export default {
       this.items = this.displayedProducts;
     },
 
+    async handlePageChange(newPage){
+      await this.$store.dispatch('updatePage', newPage);
+      this.items = this.displayedProducts;
+    },
+
     async deleteItem(item) {
-        await this.$store.dispatch('deleteProduct', item.pid);
-        await this.$store.dispatch('fetchProductList')
-        this.items = this.displayedProducts
+      await this.$store.dispatch('deleteProduct', item.pid);
+      await this.$store.dispatch('fetchProductList')
+      this.items = this.displayedProducts
     },
 
     async nextPage() {
