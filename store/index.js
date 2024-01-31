@@ -77,10 +77,10 @@ export const actions = {
     commit('setSignupStatus', response.data.status);
   },
 
-  async fetchProductList({ commit, state }) {
+  async fetchProductList({ commit, state },typee) {
     const response = await this.$axios.get('http://restory.intellisys.co.kr:9998/prd/select', {
       params: {
-        type: 'baon',
+        type: typee,
         page_no: state.currentPage,
         limit: state.productsPerPage,
       },
@@ -93,51 +93,53 @@ export const actions = {
     }
   },
 
-  nextPage({ commit, dispatch, state }) {
+  nextPage({ commit, dispatch, state }, type) {
     if (state.currentPage < Math.ceil(state.totalProducts / state.productsPerPage)) {
       commit('setCurrentPage', state.currentPage );
       console.log(state.currentPage);
-      dispatch('fetchProductList');
+      dispatch('fetchProductList', type);
     }
   },
 
-  updatePage({commit,dispatch}, newPage) {
+  updatePage({commit,dispatch}, newPage,) {
     commit('setCurrentPage', newPage);
-    dispatch('fetchProductList');
+    dispatch('fetchProductList', 'baon');
   },
 
-  prevPage({ commit, dispatch, state }) {
+  prevPage({ commit, dispatch, state }, type) {
     if (state.currentPage > 1) {
       commit('setCurrentPage', state.currentPage);
-      dispatch('fetchProductList');
+      dispatch('fetchProductList', type);
     }
   },
 
-  async deleteProduct({ commit }, productId) {
+  async deleteProduct({ commit }, item) {
     
       const response = await this.$axios.delete('http://restory.intellisys.co.kr:9998/prd/delete', {
-        params: { type: 'baon', pid: productId },
+        params: item,
       });
 
        if (response.data.status === 'success') {
-         commit('deleteProduct', productId);
+         commit('deleteProduct', item.pid);
        }
   },
 
-  async updateProduct({ commit,dispatch }, editedItem) {
+  async updateProduct({ dispatch }, editedItem) {
     // try {
      await this.$axios.patch('http://restory.intellisys.co.kr:9998/prd/update',
       editedItem,
       );
+      await dispatch('fetchProductList', editedItem.type)
     // } catch (error) {
     //   console.error('update 에러', error);
     // }
   },
 
-  async appendProduct({ commit }, editedItem) {
+  async appendProduct({ dispatch}, editedItem) {
       await this.$axios.post('http://restory.intellisys.co.kr:9998/prd/append',
       editedItem,
       );
+      await dispatch('fetchProductList', editedItem.type);
   },
 
 };

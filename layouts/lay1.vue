@@ -46,14 +46,8 @@ export default {
     data () {
       return {
         items: [
-          { title: '', link: '' },
          { title: 'baon', link: '/admin/baon' },
-          { title: '아모레몰', link: '/admin/append' }
-          // { title: 'PANTS', link: '/admin/append' },
-          // { title: 'SKIRT', link: '/admin/append' },
-          // { title: 'DRESS', link: '/admin/append' },
-          // { title: 'ACC', link: '/admin/append' },
-
+          { title: 'amore', link: '/admin/amore' }
         ],
         right: null,
       }
@@ -69,9 +63,7 @@ export default {
             this.$store.commit('logout');
             this.$router.push('/admin/');
         }
-
     }
-
 }
 </script>
 
