@@ -1,32 +1,31 @@
-<template>
+  <template>
+
     <div>
       <navbar/>
-      <main>
-        <div>
-          <div class="ic" style="width: 100%; position: relative">
-            <img src="http://intellisys.co.kr/images/sub/visual/visual04-mo.jpg" style="width:100%">
-            <div class="text">
-            <h3>
-              <span style="display: block">
-                <img src="http://intellisys.co.kr/images/restory_i/logo.jpg">
-  
-              </span>
-              <br>
-              MD, 마케터가 매일 작성하던 제품설명문
-              <br>
-              이제 GPT가 대신합니다
-              <div class="pc" style="margin-top: 20px; width: max-content; color:#FFFFFF; background-color: #c8161f; border-radius: 50px; padding: 2% 10%; text-align: center; cursor: pointer;">
-                <p>체험하기</p>
-              </div>
-            </h3>
+        <main>
+          <div>
+            <div class="ic" style="width: 100%; position: relative">
+              <img src="~/assets/r1.jpeg" style="width:100%">
+              <div class="text">
+              <h3>
+                <span style="display: block">
+                  <img src="~/assets/r2.jpeg">
+                </span>
+                <br>
+                MD, 마케터가 매일 작성하던 제품설명문
+                <br>
+                이제 GPT가 대신합니다
+                <div class="pc" style="margin-top: 20px; width: max-content; color:#FFFFFF; background-color: #c8161f; border-radius: 50px; padding: 2% 10%; text-align: center; cursor: pointer;">
+                  <p>체험하기</p>
+                </div>
+              </h3>
             </div>
           </div>
           <div class="content" style="display:flex;margin-top: 7vh">
             <div class="banner" style="width=20%; margin:0 auto; padding-right:20px">
-              <img id="restoy_ai_fixed" src="http://intellisys.co.kr/images/restory_i/require.jpg" style=" width: 100%;object-fit: contain; cursor: pointer; position: sticky; top: 69px;">
+              <img id="restoy_ai_fixed" src="~/assets/r3.jpeg" style=" width: 100%;object-fit: contain; cursor: pointer; position: sticky; top: 69px;">
             </div>
             <div class="real" style="width:80%">
-
               <div class="cont1">
                 <div style="display: flex; margin-bottom: 7vh;">
                   <div style="width: 80%; margin:auto 0;">
@@ -35,11 +34,10 @@
                   </div>
                 </div>
                 <div>
-                  <img style="width: 100%;" src="http://intellisys.co.kr/images/restory_i/restory_i_1.jpg">
+                  <img style="width: 100%;" src="~/assets/r4.jpeg">
                   <div id="content-step"></div>
                 </div>
               </div>
-
               <div class="cont2">
                 <div style="display: flex; margin-bottom: 7vh;">
                   <div style="width: 80%; margin:auto 0;">
@@ -48,35 +46,30 @@
                   </div>
                 </div>
                 <div id="ic2" style="width:100%">
-                <div style="margin-right: 3vw;">
-                  <img style="width:100%;" src="http://intellisys.co.kr/images/restory_i/restory_i_2_1.jpg">
-                </div>
-                <div>
-                  <img style="width:100%;" src="http://intellisys.co.kr/images/restory_i/restory_i_2_2.jpg">
-                </div>
+                  <div style="margin-right: 3vw;">
+                    <img style="width:100%;" src="~/assets/r5.jpeg">
+                  </div>
+                  <div>
+                    <img style="width:100%;" src="~/assets/r6.jpeg">
+                  </div>
                 </div>
                 <div class="content-step">
-                  <div style="display: flex; margin-top: 20px;">
-                                    
+                  <div style="display: flex; margin-top: 20px;">                                
                     <div style="display: flex; width: 100%; margin: auto">
-                        <p id="step" style="color: #6F43F5;">01</p>
-                        <p id="step-text" class="content-step-pc-1-0">파일 업로드로 상품 정보 연동 후 상품을 선택합니다</p>
-                    </div>
-                
+                      <p id="step" style="color: #6F43F5;">01</p>
+                      <p id="step-text" class="content-step-pc-1-0">파일 업로드로 상품 정보 연동 후 상품을 선택합니다</p>
+                    </div>             
                     <div style="display: flex; width: 100%; margin: auto">
-                        <p id="step" style="color: #6F43F5;">02</p>
-                        <p id="step-text" class="content-step-pc-1-1">모델이 자동으로 상품에 맞는 설명문을 생성합니다.</p>
+                      <p id="step" style="color: #6F43F5;">02</p>
+                      <p id="step-text" class="content-step-pc-1-1">모델이 자동으로 상품에 맞는 설명문을 생성합니다.</p>
                     </div>
-                
                     <div style="display: flex; width: 100%; margin: auto">
-                        <p id="step" style="color: #6F43F5;">03</p>
-                        <p id="step-text" class="content-step-pc-1-2">설명문에 대한 피드백을 통해 점점 더 고도화됩니다.</p>
-                    </div>
-                                
+                      <p id="step" style="color: #6F43F5;">03</p>
+                      <p id="step-text" class="content-step-pc-1-2">설명문에 대한 피드백을 통해 점점 더 고도화됩니다.</p>
+                    </div>       
                   </div>
                 </div>               
               </div>
-
               <div class="cont3">
                 <div style="display: flex;margin-bottom: 7vh;">
                   <div style="width: 80%; margin:auto 0;">
@@ -86,55 +79,52 @@
                 </div>
                 <div id="ic2" style="width:100%">
                 <div style="margin-right: 3vw;">
-                  <img style="width:100%;" src="http://intellisys.co.kr/images/restory_i/restory_i_2_1.jpg">
+                  <img style="width:100%;" src="~/assets/r7.jpeg">
                 </div>
                 <div>
-                  <img style="width:100%;" src="http://intellisys.co.kr/images/restory_i/restory_i_2_2.jpg">
+                  <img style="width:100%;" src="~/assets/r8.jpeg">
                 </div>
                 </div>
                 <div class="content-step">
-                  <div style="display: flex ;margin-top: 20px;">
-                                  
+                  <div style="display: flex ;margin-top: 20px;">           
                     <div style="display: flex; width: 100%; margin: auto">
                         <p id="step" style="color: #6F43F5;">01</p>
                         <p id="step-text" class="content-step-pc-1-0">전시할 영역을 선택하고</p>
                     </div>
-                
                     <div style="display: flex; width: 100%; margin: auto">
                         <p id="step" style="color: #6F43F5;">02</p>
                         <p id="step-text" class="content-step-pc-1-1">적용할 헤드라인과 설명문을 선택하면</p>
-                    </div>
-                
+                    </div>              
                     <div style="display: flex; width: 100%; margin: auto">
                         <p id="step" style="color: #6F43F5;">03</p>
                         <p id="step-text" class="content-step-pc-1-2">자동으로 쇼핑몰에 결과가 반영됩니다.</p>
-                    </div>
-                              
+                    </div>          
                   </div>
                 </div>  
               </div>
-
               <div class="cont4" style="margin-bottom: 3vh; text-align: center;">
-                <img id="preview_img" src="http://intellisys.co.kr/images/restory_i/restory_i_preview.jpg">
+                <img id="preview_img" src="~/assets/r9.jpeg">
                 <h3 id="preview_text" style="padding: 0; color:#6F43F5">"반복적으로 작성하던 제품 설명문 <br class="mo">이제 AI에게 맡겨보세요."</h3>
               </div>
             </div>
-  
           </div>
-          
         </div>
       </main>
       <Footer/>
     </div>
+
   </template>
   
   <script>
+
   export default {
     name: 'IndexPage'
   }
+
   </script>
   
   <style>
+  
   #content-step{
     margin-top: 6vh;
     margin-bottom: 10vh;
@@ -146,65 +136,66 @@
     left: 8%;
   }
   
-#ic2{
+  #ic2{
     display: flex;
     width:100%;
     
-}
+  }
 
-#restoy_ai_fixed {
+  #restoy_ai_fixed {
     width: 100%;
     max-width: 268px;
-}
+  }
 
-#content-title {
+  #content-title {
     font-size: 22px;
     padding: 25px 0px;
-}
+  }
 
-#content-text {
+  #content-text {
     font-size: 18px;
     line-height: 2rem;
     font-family: 'NanumSquareNeo' !important;
     color: #78777D;
-}
-@media (max-width: 1920px){
-.text h3{
-font-size: 18px;
-line-height: 34px;
-font-weight: 500;
-color:white;
-}
-}
+  }
 
-*:not(a, span) {
+  @media (max-width: 1920px){
+    .text h3{
+      font-size: 18px;
+      line-height: 34px;
+      font-weight: 500;
+      color:white;
+    }
+  }
+
+  *:not(a, span) {
     font-family: 'NanumSquareNeo-bold' !important;
-}
+  }
 
-#content-step {
+  #content-step {
     margin-top: 6vh;
     margin-bottom: 10vh;
-}
+  }
 
-#step {
+  #step {
     font-size: 26px;
     margin: auto 0;
     margin-right: 24px;
-}
+  }
 
-#step-text {
+  #step-text {
     margin: auto 0;
     font-size: 18px;
     line-height: 2rem;
     font-family: 'NanumSquareNeo' !important;
-}
+  }
 
-#preview_img {
+  #preview_img {
     width: 65%;
-}
+  }
 
-#preview_text {
+  #preview_text {
     font-size: 22px;
-}
+  }
 
   </style>

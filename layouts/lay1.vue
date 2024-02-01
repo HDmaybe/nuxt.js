@@ -10,9 +10,7 @@
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-
           <v-divider></v-divider>
-
           <v-list
             dense
             nav
@@ -21,10 +19,9 @@
               v-for="item in items"
               :key="item.title"
             >
-                <v-list-item-content>
-                <a :href="item.link" style="text-decoration: none; color: black;"><v-list-item-title >{{ item.title }}</v-list-item-title></a>
-                </v-list-item-content>
-
+              <v-list-item-content>
+              <a :href="item.link" style="text-decoration: none; color: black;"><v-list-item-title >{{ item.title }}</v-list-item-title></a>
+              </v-list-item-content>
             </v-list-item>
           </v-list>
           <v-btn color="pink" @click="logout" >
@@ -32,7 +29,6 @@
           </v-btn>
         </div>
       </v-navigation-drawer>
-
       <v-main>
         <nuxt/>
       </v-main>
@@ -41,34 +37,29 @@
 </template>
 
 <script>
-
 export default {
-    data () {
-      return {
-        items: [
-         { title: 'baon', link: '/admin/baon' },
-          { title: 'amore', link: '/admin/amore' }
-        ],
-        right: null,
-      }
-    },
-    mounted() {
-        console.log('lay')
-        if (sessionStorage.getItem('status') == null) {
-            this.$router.push('/admin');
-        }
-    },
-    methods: {
-        logout() {
-            this.$store.commit('logout');
-            this.$router.push('/admin/');
-        }
+  data () {
+    return {
+      items: [
+        { title: 'baon', link: '/admin/baon' },
+        { title: 'amore', link: '/admin/amore' }
+      ],
     }
+  },
+  mounted() {
+    if (sessionStorage.getItem('status') == null) {
+      this.$router.push('/admin');
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.commit('logout');
+      this.$router.push('/admin/');
+    }
+  }
 }
 </script>
 
-
 <style scoped>
-
 
 </style>
