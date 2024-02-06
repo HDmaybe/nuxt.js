@@ -18,12 +18,13 @@
       return {
         title : 'baon',
         headers: [
-          {text: 'ID', align: 'start',value: 'pid',},
+          {text: 'Image', align: 'start',value: 'image'},
           { text: 'Name', value: 'product' },
           { text: 'Category1', value: 'category1' },
           { text: 'Category2', value: 'category2' },
           { text: 'Price', value: 'price' },
           { text: 'Sale', value: 'sale' },
+          { text: '링크', align: 'start',value: 'url'},
           { text: 'Actions', value: 'actions', sortable: false },
         ],
         defaultItem: {

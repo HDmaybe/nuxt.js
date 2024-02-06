@@ -5,7 +5,7 @@
       :items="displayedProducts"
       :hide-default-footer=true
       class="elevation-1"
-    >
+    > 
       <template v-slot:top>
         <v-toolbar
           flat
@@ -102,7 +102,16 @@
         >
           mdi-delete
         </v-icon>
-      </template>      
+      </template>
+      <template slot="item.image" slot-scope={item}>
+          <img :src="item.img" style="width: 80px; height: 80px;">
+        <div>
+          상품코드 | {{ item.pid }}
+        </div>
+      </template>
+      <template slot="item.url" slot-scope={item}>
+        <a :href="item.url" target="_blank">link</a>
+      </template>
     </v-data-table>
     <v-pagination
       v-model="currentPage"
