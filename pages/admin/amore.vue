@@ -18,13 +18,13 @@
       return {
         title : 'amore',
         headers: [
-          {text: 'Image', align: 'start',value: 'image'},
-          { text: 'Name', value: 'product' },
-          { text: 'Category', value: 'category' },
-          { text: 'Brand', value: 'brand' },
-          { text: 'Price', value: 'price' },
-          { text: 'Sale', value: 'sale' },
-          { text: '링크', align: 'start',value: 'url'},
+          {text: '이미지',  align: 'center',value: 'image'},
+          { text: '상품명', value: 'product' },
+          { text: '카테고리', value: 'category' },
+          { text: '브랜드', value: 'brand' },
+          { text: '가격', value: 'price' },
+          { text: '세일가', value: 'sale' },
+          { text: '바로가기', align: 'center',value: 'url'},
           { text: 'Actions', value: 'actions', sortable: false },
         ],
         defaultItem: {

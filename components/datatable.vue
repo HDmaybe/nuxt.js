@@ -18,7 +18,7 @@
           >      
             <template v-slot:activator="{ on, attrs }">
               <v-btn
-                color="primary"
+                color="gray"
                 dark
                 class="mb-2"
                 v-bind="attrs"
@@ -29,24 +29,11 @@
             </template>
             <v-card>
               <v-card-title>
-                  <span class="text-h5">{{ formTitle }}</span>
+                  <span class="text-h5">{{ is_edit }}</span>
               </v-card-title>
 
               <v-card-text>
                   <v-container>
-                      <v-row>
-                  <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                  >
-                    <v-text-field
-                      v-if="editedIndex === 'New Item'"
-                      v-model="editedItem.pid"
-                      label="ID"
-                    ></v-text-field>
-                  </v-col>
-                </v-row>
                 <v-row v-for="columns in row_count" :key="columns[0]">
                   <v-col
                     v-for="column in columns"
@@ -56,7 +43,7 @@
                     :key="column"
                   >
                     <v-text-field
-                      v-if="editedIndex != 'Edit Item' && column != 'pid'"
+                      v-if="(is_edit == 'Edit Item' && column != 'pid') || (is_edit == 'New Item')"
                       v-model="editedItem[column]"
                       :label="column"
 
@@ -104,21 +91,21 @@
         </v-icon>
       </template>
       <template slot="item.image" slot-scope={item}>
-          <img :src="item.img" style="width: 80px; height: 80px;">
+          <img :src="item.img" style="width: 80px; height: 80px; margin-top: 10px;">
         <div>
           상품코드 | {{ item.pid }}
         </div>
       </template>
       <template slot="item.url" slot-scope={item}>
-        <a :href="item.url" target="_blank">link</a>
+        <a :href="item.url" target="_blank">바로가기</a>
       </template>
     </v-data-table>
     <v-pagination
       v-model="currentPage"
       :length="totalPages"
       @input="handlePageChange"
-      total-visible="10"
-      style="margin-top: 25px;"
+      total-visible="6"
+      style="margin-top: 25px;float: right;"
     > 
     </v-pagination>
     <v-dialog v-if="duplicateProductIdMessage" v-model="dialog2" max-width="500" >
@@ -147,7 +134,7 @@ export default {
         price: '',
         sale: '',
         },
-      editedIndex : 'New Item',
+      is_edit : 'New Item',
       dialog : false,
       dialog2: true,
       currentPage : 1
@@ -155,10 +142,6 @@ export default {
   },
 
   computed: {
-    formTitle () {
-      return this.editedIndex === 'New Item' ? 'New Item' : 'Edit Item'
-    },
-
     totalPages() {
         return this.$store.getters['totalPages'];
       },
@@ -166,10 +149,6 @@ export default {
     displayedProducts() {
       return this.$store.state.productList
     },
-
-    // currentPage() {
-    // return this.$store.state.currentPage;
-    // },
 
     duplicateProductIdMessage() {
     return this.$store.state.duplicateProductIdMessage;
@@ -191,6 +170,7 @@ export default {
     
   mounted() {
     this.$store.dispatch('fetchProductList',this.title);
+    this.set_row_count();
   },
 
   methods: {
@@ -207,28 +187,30 @@ export default {
     },
 
     editItem (item) {
-      this.editedIndex = this.displayedProducts.indexOf(item)
+      this.is_edit = 'Edit Item'
       this.editedItem = Object.assign({}, item)
+      this.set_row_count()
+      this.dialog = true
+    },
+
+    set_row_count() {
       this.row_count = []
       let count = 0
       let limit_count = Math.ceil(Object.keys(this.editedItem).length / 2)
       while (true) {
-        
         this.row_count.push(Object.keys(this.editedItem).splice(count*2,2));
         count = count +1;
         if (limit_count <= count) {
           break
         }
       }
-
-      this.dialog = true
     },
 
     close () {
       this.dialog = false
       this.$nextTick(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
-        this.editedIndex = 'New Item'
+        this.is_edit = 'New Item'
       })
     },
 
@@ -238,7 +220,7 @@ export default {
 
     async save () {
       Object.assign(this.editedItem, {type : this.title})
-      if (this.editedIndex !== 'New Item') {
+      if (this.is_edit !== 'New Item') {
         await this.$store.dispatch('updateProduct', this.editedItem)
       } else {
         if(this.editItem.pid !== null){
@@ -253,5 +235,7 @@ export default {
 </script>
 
 <style>
-
+.v-data-table-header__icon {
+  display: none !important;
+}
 </style>

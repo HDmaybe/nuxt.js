@@ -7,12 +7,17 @@ export const state = () => ({
   productsPerPage: 10,
   totalProducts: null,
   duplicateProductIdMessage: null,
+  // userId: null,
 });
 
 export const mutations = {
   setUser(state, user) {
     state.user = user;
   },
+
+  // setUserId(state,userId) {
+  //   state.userId = userId;
+  // },
 
   setLoginStatus(state, status) {
     state.loginStatus = status;
@@ -47,12 +52,17 @@ export const mutations = {
 export const actions = {
   async loginUser({ commit }, userData) {
     const response = await this.$axios.post('http://restory.intellisys.co.kr:9998/use/login', userData);
+    
+    console.log(userData.id)
+    // const userId = userData.id
     if (response.data.status === 'success') {
       commit('setUser', response.data.user);
+      // commit('setUserId', userId);
     }
     commit('setLoginStatus', response.data.status);
     sessionStorage.setItem('user',JSON.stringify(response.data.user));
     sessionStorage.setItem('status',response.data.status);
+    sessionStorage.setItem('id',userData.id);
   },
 
   async signupUser({ commit }, userData) {
@@ -107,5 +117,8 @@ export const actions = {
 export const getters = {
   totalPages(state) {
     return Math.ceil(state.totalProducts / state.productsPerPage);
-  }
+  },
+  // userId(state) {
+  //   return state.userId;
+  // },
 };

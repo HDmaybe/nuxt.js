@@ -10,7 +10,8 @@
   </template>
 
   <script>
-  import datatable from '../../components/datatable.vue'
+
+import datatable from '../../components/datatable.vue'
   export default {
     layout : 'lay1',
     components: { datatable },
@@ -18,13 +19,13 @@
       return {
         title : 'baon',
         headers: [
-          {text: 'Image', align: 'start',value: 'image'},
-          { text: 'Name', value: 'product' },
-          { text: 'Category1', value: 'category1' },
-          { text: 'Category2', value: 'category2' },
-          { text: 'Price', value: 'price' },
-          { text: 'Sale', value: 'sale' },
-          { text: '링크', align: 'start',value: 'url'},
+          {text: '이미지', align: 'center',value: 'image'},
+          { text: '상품명', value: 'product' },
+          { text: '카테고리1', value: 'category1' },
+          { text: '카테고리2', value: 'category2' },
+          { text: '가격', value: 'price' },
+          { text: '세일가', value: 'sale' },
+          { text: '바로가기', align: 'center',value: 'url'},
           { text: 'Actions', value: 'actions', sortable: false },
         ],
         defaultItem: {
