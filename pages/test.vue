@@ -1,7 +1,5 @@
-<template>
-    <div class="tokyo">
-        <script src="test.js"></script>
-    </div>
+<template>  
+    <script src="test.js"></script>
 </template>
 
 <script>
